@@ -85,6 +85,39 @@ public class MainActivity extends Activity {
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
                 Toast toast = Toast.makeText(this, "Content:" + contents + " Format:" + format, Toast.LENGTH_LONG);
                 toast.show();
+                if(contents.startsWith("0")){
+                    tv.setText("Regular Monster");
+                }
+                else if (contents.startsWith("1")){
+                    tv.setText("Super rare reserved monster");
+                }
+                else if (contents.startsWith("2")){
+                    tv.setText("Heavy Monster");
+                }
+                else if (contents.startsWith("3")){
+                    tv.setText("Junkie Monster on steroids");
+                }
+                else if (contents.startsWith("4")){
+                    tv.setText("hmmmm");
+                }
+                else if (contents.startsWith("5")){
+                    tv.setText("Extreme Couponer");
+                }
+                else if (contents.startsWith("6")){
+                    tv.setText("Ultra rare monster");
+                }
+                else if (contents.startsWith("7")){
+                    tv.setText("hahaha!");
+                }
+                else if (contents.startsWith("8")){
+                    tv.setText("Ultra rare reserved monstaaa!!!");
+                }
+                else if (contents.startsWith("9")){
+                    tv.setText("Holy crap!!!");
+                }
+                else{
+                    tv.setText("wtf!!!???");
+                }
 
 
             }
