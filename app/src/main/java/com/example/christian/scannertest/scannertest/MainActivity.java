@@ -8,17 +8,22 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
 
 public class MainActivity extends Activity {
 
     static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
+    String whatever;
+    TextView tv;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //set the main content layout of the Activity
         setContentView(R.layout.activity_main);
+        tv = (TextView) findViewById(R.id.textView);
     }
 
     //product barcode mode
@@ -76,9 +81,12 @@ public class MainActivity extends Activity {
             if (resultCode == RESULT_OK) {
                 //get the extras that are returned from the intent
                 String contents = intent.getStringExtra("SCAN_RESULT");
+                tv.setText("Content: " + contents);
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
                 Toast toast = Toast.makeText(this, "Content:" + contents + " Format:" + format, Toast.LENGTH_LONG);
                 toast.show();
+
+
             }
         }
     }
